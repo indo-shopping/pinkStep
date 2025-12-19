@@ -1,0 +1,39 @@
+body { font-family: 'Poppins', sans-serif; }
+.pink-gradient { background: linear-gradient(135deg, #ffafbd, #ffc3a0); }
+
+/* Efek hover pada kartu produk */
+.product-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.product-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 30px rgba(249, 168, 212, 0.4);
+}
+
+body { font-family: 'Poppins', sans-serif; }
+
+.hero-bg {
+    background: linear-gradient(rgba(244, 114, 182, 0.4), rgba(244, 114, 182, 0.4)), 
+                url('https://images.unsplash.com/photo-1549298916-b41d501d3772?q=80&w=1412');
+    background-size: cover;
+    background-position: center;
+    border-radius: 0 0 50px 50px;
+}
+
+.product-card {
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    cursor: pointer;
+}
+
+.product-card:hover {
+    transform: translateY(-10px);
+}
+
+@keyframes pop-in {
+    from { opacity: 0; transform: scale(0.9); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+.animate-pop-in {
+    animation: pop-in 0.3s forwards;
+}
