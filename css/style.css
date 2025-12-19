@@ -1,0 +1,142 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
+:root {
+    --primary-pink: #ff85a2;
+    --soft-pink: #fff0f3;
+    --dark-pink: #f06292;
+    --glass: rgba(255, 255, 255, 0.8);
+}
+
+body { 
+    font-family: 'Poppins', sans-serif; 
+    background-color: #fffafb;
+    color: #4a4a4a;
+    scroll-behavior: smooth;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar { width: 8px; }
+::-webkit-scrollbar-track { background: var(--soft-pink); }
+::-webkit-scrollbar-thumb { background: var(--primary-pink); border-radius: 10px; }
+
+/* Animations */
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade { animation: fadeInUp 0.6s ease-out forwards; }
+
+.product-card {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    border: 1px solid #ffe4eb;
+}
+
+.product-card:hover {
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: 0 20px 25px -5px rgba(255, 182, 193, 0.4);
+}
+
+.glass-morphism {
+    background: var(--glass);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.btn-pink {
+    background: linear-gradient(135deg, #ff85a2, #f06292);
+    transition: all 0.3s;
+}
+
+.btn-pink:hover {
+    filter: brightness(1.1);
+    transform: scale(1.05);
+    box-shadow: 0 10px 15px rgba(240, 98, 146, 0.3);
+}
+
+/* Container Latar Belakang */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  padding: 20px; /* Jarak agar tidak mepet layar di HP */
+}
+
+/* Kotak Modal Utama */
+.modal-content {
+  background: #fff;
+  width: 100%;
+  **max-width: 500px;** /* UKURAN SAMA UNTUK SEMUA: Batas lebar maksimal di desktop */
+  **height: auto;**
+  **max-height: 90vh;** /* Agar tidak melebihi tinggi layar HP */
+  border-radius: 15px;
+  position: relative;
+  padding: 25px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+  **display: flex;**
+  **flex-direction: column;**
+  **overflow-y: auto;** /* Jika konten kepanjangan, bisa di-scroll di dalam modal */
+}
+
+/* Gambar Produk agar konsisten */
+.modal-img {
+  width: 100%;
+  height: 250px; /* Ukuran gambar seragam */
+  object-fit: cover; /* Gambar tidak penyok, otomatis terpotong rapi */
+  border-radius: 10px;
+  margin-bottom: 15px;
+}
+
+/* Responsif untuk HP (Layar Kecil) */
+@media (max-width: 480px) {
+  .modal-content {
+    **width: 95%;** /* Mengambil hampir seluruh lebar layar */
+    padding: 15px;
+    margin: 0 auto;
+  }
+  
+  .modal-img {
+    height: 200px; /* Sedikit lebih kecil di HP */
+  }
+}
+
+/* Pastikan body memiliki padding top agar tidak tertutup navbar fixed */
+section:first-of-type {
+    padding-top: 120px; /* Sesuaikan dengan tinggi navbar */
+}
+
+/* Transisi halus untuk navbar saat di-scroll */
+nav {
+    transition: all 0.3s ease;
+}
+
+/* Tombol khusus di Tentang Kami */
+.btn-pink {
+    background: #ff85a2;
+    transition: all 0.3s;
+}
+.btn-pink:hover {
+    background: #f06292;
+    transform: translateY(-2px);
+}
+
+footer ul li a {
+    display: inline-flex;
+    align-items: center;
+    transition: transform 0.3s ease;
+}
+
+footer ul li a:hover {
+    transform: translateX(5px);
+}
+
+footer .material-symbols-rounded {
+    font-size: 20px;
+}
